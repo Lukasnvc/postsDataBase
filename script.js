@@ -96,6 +96,8 @@ const posts = document.querySelector('#posts');
 form.addEventListener('submit', (e) => {
 e.preventDefault();
 post(title.value, content.value);
+title.value='';
+content.value='';
 })
 
 const draw = (data) => {
