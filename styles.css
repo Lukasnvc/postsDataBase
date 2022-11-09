@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body form {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+body form label {
+  margin: 10px;
+  color: rgb(72, 70, 70);
+  font-size: 0.9rem;
+}
+body form button {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(83, 83, 237);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+body #edit {
+  display: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  padding: 50px;
+  border: 4px solid red;
+}
+body #edit h1 {
+  text-align: center;
+  color: red;
+}
+body #posts {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 10px;
+}
+body #posts .card {
+  border: 1px solid black;
+  background-color: rgb(231, 229, 229);
+  border-radius: 10px;
+  position: relative;
+}
+body #posts .card .title, body #posts .card .time, body #posts .card .content {
+  margin-left: 20px;
+}
+body #posts .card .title {
+  font-size: 1.8rem;
+}
+body #posts .card .content {
+  margin-bottom: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body #posts .card .time {
+  color: rgb(44, 44, 44);
+  font-size: 0.7rem;
+  font-style: italic;
+}
+body #posts .card .editBtn {
+  background-color: rgb(83, 83, 237);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 70px;
+}
+body #posts .card .deleteBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(228, 83, 83);
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
