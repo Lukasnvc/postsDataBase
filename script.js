@@ -1,35 +1,17 @@
-// fetch('https://testapi.io/api/lukasnvc/resource/test',
-//     {
-//         method: 'GET',
-//         // headers: {
-//         //     'Content-Type': 'application/json'
-//         // },
-//         // body: JSON.stringify({
-//         //     name: 'Tomas',
-//         //     lastname: 'Vyrukas',
-//         //     email: 'tomukas@gmail.com'
-//         // })
-//     }
-// )
-//     .then((response) => {
-//         if (response.ok) {
-//           console.log(response)
-//             return response.json();
-//         }
-//     })
-//     .then((result) => {
-//         console.log(result);
-//     })
-
-fetch('https://testapi.io/api/lukasnvc/resource/practice')
+const start = () => {
+  fetch('https://testapi.io/api/lukasnvc/resource/practice')
 .then((response) => {
   if (response.ok) {
     return response.json();
   }
 })
 .then((data) => {
+  const posts = document.querySelector('#posts');
+  posts.innerHTML='';
   draw(data.data)
 })
+}
+start()
 
 const deleteItem = (id) => {
   console.log(id)
@@ -37,7 +19,11 @@ const deleteItem = (id) => {
   {
     method: 'DELETE'
   })
-  location.reload()
+  .then((response) => {
+    if (response.ok) {
+      start()
+    }
+  })
 }
 
 const editPost = (valueTitle, valueContent, idEdit) => {
@@ -74,7 +60,7 @@ const editPost = (valueTitle, valueContent, idEdit) => {
   })
   .then((result) => {
     console.log(result);
-    location.reload();
+    start();
   })
 }
  
@@ -98,7 +84,7 @@ const post = (valueTitle, valueContent) => {
   }
 })
 .then((result) => {
-  location.reload();
+  start();
 })
 }
 
@@ -110,7 +96,6 @@ const posts = document.querySelector('#posts');
 form.addEventListener('submit', (e) => {
 e.preventDefault();
 post(title.value, content.value);
-
 })
 
 const draw = (data) => {
